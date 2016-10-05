@@ -9,7 +9,7 @@ function draw() {
   
  
 }
-function touchStarted ()
+function touchStarted()
 {
   background(255);
    rect(touches[0].x,touches[0].y,50,50);
