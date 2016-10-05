@@ -1,7 +1,8 @@
 function setup() {
   createCanvas(windowWidth,windowHeight);
   rectMode(CENTER);
- 
+  stroke(0);
+       strokeWeight(3);
   
 }
 
@@ -16,7 +17,7 @@ function touchStarted()
     
     for(var i=0;i<touches.length;i++)
     {
-      stroke(3);
+
    rect(touches[i].x,touches[i].y,100,100);
  
     }
