@@ -17,7 +17,7 @@ function touchStarted()
     for(var i=0;i<touches.length;i++)
     {
       stroke(3);
-   rect(touches[0].x,touches[0].y,100,100);
+   rect(touches[i].x,touches[i].y,100,100);
  
     }
 
