@@ -1,5 +1,6 @@
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  rectMode(CENTER);
   
 }
 
@@ -10,10 +11,9 @@ function draw() {
 function touchStarted ()
 {
   background(255);
+   rect(touches[0].X,touches[0].Y,50,50);
   textSize(50);
-  rect(touches[x],touches[y],50,50);
-  text(touches[0].x);
-  text(touches[0].y);
+  
   
   
 }
