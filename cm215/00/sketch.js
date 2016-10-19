@@ -11,6 +11,7 @@ function setup() {
 
 function draw() {
  background(255);
+ noFill();
     /**fill(random(255),random(255),random(255));*/
     
     for(var i=0;i<touches.length;i++)
