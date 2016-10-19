@@ -20,6 +20,9 @@ function draw() {
    rect(touches[i].x,touches[i].y,100,100);
  
     }
+    /*if((i++)<toucheslength){
+     /**line(touches[i].x,
+    }*/
  
 }
 function touchStarted()
