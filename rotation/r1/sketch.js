@@ -1,14 +1,16 @@
 function setup() {
  createCanvas(windowWidth,windowHeight); 
  ellipse(CENTER);
- balleSize=30;
+ balleSize=100;
  
 }
 
 function draw() {
-  drawBall();
+ 
   
  background(255);
+ 
+  drawBall();
  textSize(40);
  
  text("Rx: " + floor( rotationX), 100, 100);
