@@ -3,7 +3,7 @@ document.ontouchmove = function(event){
 }
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  rectMode(CENTER);
+  ellipseMode(CENTER);
   stroke(0);
   strokeWeight(3);
   
