@@ -10,16 +10,17 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
   
     /**fill(random(255),random(255),random(255));*/
-    
+    noFill();
     for(var i=0;i<touches.length;i++)
     {
 
    ellipse(touches[i].x,touches[i].y,100);
  
     }
+    
    fill(255,0,0);
    beginShape(); 
      for(var i=0;i<touches.length;i++)
