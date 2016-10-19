@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(0);
   
     /**fill(random(255),random(255),random(255));*/
     
