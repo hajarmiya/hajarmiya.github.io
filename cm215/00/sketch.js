@@ -19,7 +19,7 @@ function draw() {
        ellipse(touches[i].x,touches[i].y,100);
     }
     
-   fill(255,0,0);
+   fill(255,255,0);
    beginShape(); 
      for(var i=0;i<touches.length;i++)
      {
