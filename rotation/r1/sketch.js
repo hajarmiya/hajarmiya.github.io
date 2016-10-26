@@ -4,7 +4,7 @@ function setup() {
  createCanvas(windowWidth,windowHeight); 
  ellipse(CENTER);
  
- balleSize=100;
+ balleSize=50;
  Px=windowWidth/2;
  Py=windowHeight/2;
  Fr=0.01;
@@ -18,9 +18,15 @@ function draw() {
   
  background(255);
  
+ 
+ if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
+   {Vx=-Vx;}
+ 
  Ax = rotationY*Fr;
  Vx +=Ax;
  Px +=Vx;
+ 
+ 
 
 Ay = rotationX*Fr;
 Vy +=Ay;
