@@ -17,10 +17,17 @@ function setup() {
 function draw() {
   
  background(255);
+ if((Px-1/2balleSize)>=windowWidth )
+ {
+ Ax = rotationY*Fr;
+ Vx =-Vx+Ax;
+ Px +=Vx;
+ }
+ else
+ {Ax = rotationY*Fr;
+ Vx +=Ax;
+ Px +=Vx;}
  
-Ax = rotationY*Fr;
-Vx +=Ax;
-Px +=Vx;
 
 Ay = rotationX*Fr;
 Vy +=Ay;
