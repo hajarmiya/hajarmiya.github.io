@@ -1,4 +1,4 @@
-var Ax,Vx,Px,Fr;
+var Ax,Vx,Px,Py,Fr;
 
 function setup() {
  createCanvas(windowWidth,windowHeight); 
@@ -7,7 +7,7 @@ function setup() {
  Px=windowWidth/2;
  Py=windowHeight/2;
  fr=0.01;
- Vx=1;
+ Vx=0;
 
  
 }
@@ -20,10 +20,9 @@ Ax=rotationY*Fr;
 Vx +=Ax;
 Px +=Vx;
 
-Fill(100);
- ellipse(Px,rotation+Py,balleSize,balleSize);
+
  
-  /*drawBall();*/
+ drawBall();
   
  textSize(40);
  
@@ -32,8 +31,8 @@ Fill(100);
  text("Rz: " + floor( rotationZ), 100, 200);
 }
 
-/*function drawBall ()
+function drawBall ()
 {
   fill(100);
-  ellipse(Px,rotation+Py,balleSize,balleSize);
-}*/
+  ellipse(Px,Py,balleSize,balleSize);
+}
