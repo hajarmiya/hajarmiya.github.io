@@ -1,4 +1,4 @@
-var Ax,Vx,Px,Py,Fr;
+var Ax,Ay,Vy,Vx,Px,Py,Fr;
 
 function setup() {
  createCanvas(windowWidth,windowHeight); 
@@ -9,6 +9,7 @@ function setup() {
  Py=windowHeight/2;
  Fr=0.01;
  Vx=0;
+ Vy=0;
 
  
 }
@@ -20,6 +21,10 @@ function draw() {
 Ax = rotationY*Fr;
 Vx +=Ax;
 Px +=Vx;
+
+Ay = rotationX*Fr;
+Vy +=Ay;
+Py +=Vy;
 
 
  
