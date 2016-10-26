@@ -19,7 +19,8 @@ function draw() {
 Ax=rotationY*Fr;
 Vx +=Ax;
 Px +=Vx;
-fill(100);
+
+Fill(100);
  ellipse(Px,rotation+Py,balleSize,balleSize);
  
   /*drawBall();*/
