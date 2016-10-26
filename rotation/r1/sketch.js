@@ -22,8 +22,6 @@ Px=Px+Vx;
  
   drawBall();
   
-  
- 
  textSize(40);
  
  text("Rx: " + floor( rotationX), 100, 100);
@@ -35,5 +33,5 @@ function drawBall ()
 {
   fill(100);
   
-  ellipse(Px,rotationX+Py,balleSize,balleSize);
+  ellipse(Px,Py,balleSize,balleSize);
 }
