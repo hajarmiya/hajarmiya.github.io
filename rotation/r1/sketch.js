@@ -7,7 +7,7 @@ function setup() {
  Px=windowWidth/2;
  Py=windowHeight/2;
  fr=0.01;
- Vx=0;
+ Vx=1;
 
  
 }
