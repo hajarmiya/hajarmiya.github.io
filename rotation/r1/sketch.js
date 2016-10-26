@@ -3,7 +3,7 @@ var Ax,Vx,Px,Fr;
 function setup() {
  createCanvas(windowWidth,windowHeight); 
  ellipse(CENTER);
- balleSize=50;
+ balleSize=100;
  Px=windowWidth/2;
  Py=windowHeight/2;
  fr=0.01;
@@ -17,8 +17,8 @@ function draw() {
  background(255);
  
 Ax=rotationY*Fr;
-Vx=Vx+Ax;
-Px=Px+Vx;
+Vx +=Ax;
+Px +=Vx;
  
   drawBall();
   
@@ -32,6 +32,5 @@ Px=Px+Vx;
 function drawBall ()
 {
   fill(100);
-  
-  ellipse(Px,Py,balleSize,balleSize);
+  ellipse(Px,rotation+Py,balleSize,balleSize);
 }
