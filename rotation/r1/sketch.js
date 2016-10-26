@@ -19,8 +19,10 @@ function draw() {
 Ax=rotationY*Fr;
 Vx +=Ax;
 Px +=Vx;
+fill(100);
+ ellipse(Px,rotation+Py,balleSize,balleSize);
  
-  drawBall();
+  /*drawBall();*/
   
  textSize(40);
  
@@ -29,8 +31,8 @@ Px +=Vx;
  text("Rz: " + floor( rotationZ), 100, 200);
 }
 
-function drawBall ()
+/*function drawBall ()
 {
   fill(100);
   ellipse(Px,rotation+Py,balleSize,balleSize);
-}
+}*/
