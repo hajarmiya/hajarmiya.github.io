@@ -3,10 +3,11 @@ var Ax,Vx,Px,Py,Fr;
 function setup() {
  createCanvas(windowWidth,windowHeight); 
  ellipse(CENTER);
+ 
  balleSize=100;
  Px=windowWidth/2;
  Py=windowHeight/2;
- fr=0.01;
+ Fr=0.01;
  Vx=0;
 
  
