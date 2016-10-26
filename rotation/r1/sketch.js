@@ -27,8 +27,9 @@ Vy +=Ay;
 Py +=Vy;
 
 
- 
+
  drawBall();
+ 
   
  textSize(40);
  
