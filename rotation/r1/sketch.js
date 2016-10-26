@@ -17,7 +17,7 @@ function draw() {
   
  background(255);
  
-Ax=rotationY*Fr;
+Ax = rotationY*Fr;
 Vx +=Ax;
 Px +=Vx;
 
