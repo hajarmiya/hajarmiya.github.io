@@ -37,7 +37,7 @@ function draw() {
  Px +=Vx;
  
  if((Py+balleSize/2)>=windowHeight|| (Py-balleSize/2)<=0)
-   {Vy=-Vy;}
+   {Vy=-Vy*Fr;}
 
 Ay = rotationX*Fr;
 Vy +=Ay;
