@@ -37,7 +37,8 @@ function draw() {
    ellipse(x2,y2,rayon,rayon);
    
     if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
-   {x=50;y=50;}
+   {x=random(0,windowWidth);
+ y=random(0,windowHeight);}
  
    
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
