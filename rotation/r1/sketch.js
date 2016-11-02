@@ -51,14 +51,14 @@ function draw() {
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
    {Vx=-Vx*Bc;}
    
- Ax = rotationY*Fr;
+ Ax = floor(rotationY)*Fr;
  Vx +=Ax;
  Px +=Vx;
  
  if((Py+balleSize/2)>=windowHeight|| (Py-balleSize/2)<=0)
    {Vy=-Vy*Bc;}
 
-Ay = rotationX*Fr;
+Ay = floor(rotationX)*Fr;
 Vy +=Ay;
 Py +=Vy;
 
