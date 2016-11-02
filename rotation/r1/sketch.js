@@ -1,4 +1,4 @@
-var Ax,Ay,Vy,Vx,Px,Py,Fr;
+var Ax,Ay,Vy,Vx,Px,Py,Fr,x1,y1,x,y,x2,y2,rayon;
 
 function setup() {
  createCanvas(windowWidth,windowHeight); 
@@ -16,8 +16,7 @@ function setup() {
  y1=random(0,windowHeight);
   x2=random(0,windowWidth);
  y2=random(0,windowHeight);
-
-
+ rayon=30;
 
  
 }
@@ -63,16 +62,16 @@ function drawBall ()
 function bonneBall ()
 {
   fill(255,58,124);
-   ellipse(x,y,30,30);
+   ellipse(x,y,rayon,rayon);
 }
 
 function obsBall ()
 {
   fill(36,56,94);
-   ellipse(x1,y1,30,30);
+   ellipse(x1,y1,rayon,rayon);
 }
 function malBall ()
 {
   fill(170,1,124);
-   ellipse(x2,y2,30,30);
+   ellipse(x2,y2,rayon,rayon);
 }
