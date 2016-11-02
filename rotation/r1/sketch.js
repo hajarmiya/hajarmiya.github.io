@@ -39,8 +39,8 @@ function draw() {
 
 
   if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
-    x = random(0, windowWidth);
-    y = random(0, windowHeight);
+   /* x = random(0, windowWidth);
+    y = random(0, windowHeight);*/
     score = score + 10;
   } 
   else if (dist(x2, y2, Px, Py) <= (balleSize / 2 + rayon / 2)) {
@@ -50,7 +50,7 @@ function draw() {
   else if (dist(x1, y1, Px, Py) <= (balleSize / 2 + rayon / 2)) {
     x1 = random(0, windowWidth);
     y2 = random(0, windowHeight);
-    score = score - 10;
+    score = score -10;
   }
   else {
     Vx = Vx;
