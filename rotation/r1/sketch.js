@@ -38,7 +38,9 @@ function draw() {
    
     if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
    {x=random(0,windowWidth);
- y=random(0,windowHeight);}
+ y=random(0,windowHeight);
+    balleSize=balleSize+5; 
+   }
  
    
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
