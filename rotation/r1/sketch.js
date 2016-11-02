@@ -1,4 +1,4 @@
-var Ax,Ay,Vy,Vx,Px,Py,Fr,x1,y1,x,y,x2,y2,rayon;
+var Ax,Ay,Vy,Vx,Px,Py,Fr,x1,y1,x,y,x2,y2,rayon,score;
 
 function setup() {
  createCanvas(windowWidth,windowHeight); 
@@ -9,7 +9,7 @@ function setup() {
  Py=windowHeight/2;
  Fr=0.01;
  Bc=0.8;
- 
+ score=0;
  Vx=0;
  Vy=0;
  x=random(0,windowWidth);
@@ -37,16 +37,21 @@ function draw() {
   fill(170,1,124);
    ellipse(x2,y2,rayon,rayon);
    
+   
   if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
    {x=random(0,windowWidth);
     y=random(0,windowHeight);
-    balleSize=balleSize*1.2; }
+   score=score+10;}
     
     
-   if(dist(x2,y2,Px,Py)<=(balleSize/2+rayon/2))
+   else if(dist(x2,y2,Px,Py)<=(balleSize/2+rayon/2))
     {Vx=-Vx;
      Vy=-Vy;}
-   
+     
+     else if(dist(x1,y1,Px,Py)<=(balleSize/2+rayon/2))
+    {x=random(0,windowWidth);
+    y=random(0,windowHeight);
+    score=score-10; }
  
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
    {Vx=-Vx*Bc;}
@@ -64,6 +69,9 @@ Py +=Vy;
 
 drawBall();
 
+  textSize(40);
+ 
+ text("score " + floor( score), 100, 100);
  
  /*textSize(40);
  
