@@ -36,6 +36,9 @@ function draw() {
   fill(170,1,124);
    ellipse(x2,y2,rayon,rayon);
    
+    if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
+   {x=50;y=50;}
+ 
    
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
    {Vx=-Vx;}
