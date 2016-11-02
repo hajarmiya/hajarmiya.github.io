@@ -8,6 +8,7 @@ function setup() {
  Px=windowWidth/2;
  Py=windowHeight/2;
  Fr=0.01;
+ Bc=0.8;
  
  Vx=0;
  Vy=0;
@@ -48,13 +49,14 @@ function draw() {
  
    
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
-   {Vx=-Vx;}
+   {Vx=-Vx*Bc;}
+   
  Ax = rotationY*Fr;
  Vx +=Ax;
  Px +=Vx;
  
  if((Py+balleSize/2)>=windowHeight|| (Py-balleSize/2)<=0)
-   {Vy=-Vy;}
+   {Vy=-Vy*Bc;}
 
 Ay = rotationX*Fr;
 Vy +=Ay;
