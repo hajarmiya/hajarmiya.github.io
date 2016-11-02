@@ -8,14 +8,14 @@ function setup() {
  Px=windowWidth/2;
  Py=windowHeight/2;
  Fr=0.01;
- bounce=0,2;
+ 
  Vx=0;
  Vy=0;
  x=random(0,windowWidth);
  y=random(0,windowHeight);
-  x1=random(0,windowWidth);
+ x1=random(0,windowWidth);
  y1=random(0,windowHeight);
-  x2=random(0,windowWidth);
+ x2=random(0,windowWidth);
  y2=random(0,windowHeight);
  rayon=30;
 
@@ -27,10 +27,16 @@ function draw() {
   
  background(255);
  
- bonneBall ();
- obsBall ();
- malBall ();
+ fill(255,58,124);
+   ellipse(x,y,rayon,rayon);
  
+ fill(36,56,94);
+   ellipse(x1,y1,rayon,rayon);
+   
+  fill(170,1,124);
+   ellipse(x2,y2,rayon,rayon);
+   
+   
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
    {Vx=-Vx;}
  Ax = rotationY*Fr;
@@ -38,7 +44,7 @@ function draw() {
  Px +=Vx;
  
  if((Py+balleSize/2)>=windowHeight|| (Py-balleSize/2)<=0)
-   {Vy=-Vy*bounce;}
+   {Vy=-Vy;}
 
 Ay = rotationX*Fr;
 Vy +=Ay;
@@ -61,19 +67,6 @@ function drawBall ()
   
 }
 
-function bonneBall ()
-{
-  fill(255,58,124);
-   ellipse(x,y,rayon,rayon);
-}
 
-function obsBall ()
-{
-  fill(36,56,94);
-   ellipse(x1,y1,rayon,rayon);
-}
-function malBall ()
-{
-  fill(170,1,124);
-   ellipse(x2,y2,rayon,rayon);
-}
+
+
