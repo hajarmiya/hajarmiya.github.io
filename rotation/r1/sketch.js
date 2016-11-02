@@ -8,6 +8,7 @@ function setup() {
  Px=windowWidth/2;
  Py=windowHeight/2;
  Fr=0.01;
+ bounce=0,2;
  Vx=0;
  Vy=0;
  x=random(0,windowWidth);
@@ -37,7 +38,7 @@ function draw() {
  Px +=Vx;
  
  if((Py+balleSize/2)>=windowHeight|| (Py-balleSize/2)<=0)
-   {Vy=-Vy*Fr;}
+   {Vy=-Vy*bounce;}
 
 Ay = rotationX*Fr;
 Vy +=Ay;
@@ -57,6 +58,7 @@ function drawBall ()
 {
   fill(100);
   ellipse(Px,Py,balleSize,balleSize);
+  
 }
 
 function bonneBall ()
