@@ -36,10 +36,14 @@ function draw() {
   fill(170,1,124);
    ellipse(x2,y2,rayon,rayon);
    
-    if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
+  if(dist(x,y,Px,Py)<=(balleSize/2+rayon/2))
    {x=random(0,windowWidth);
  y=random(0,windowHeight);
-    balleSize=balleSize*2; 
+    balleSize=balleSize*1,5; 
+    
+     if(dist(x1,y1,Px,Py)<=(balleSize/2+rayon/2))
+   {Vx=-Vx;
+     Vy=-Vy;
    }
  
    
