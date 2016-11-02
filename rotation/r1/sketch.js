@@ -43,9 +43,9 @@ function draw() {
     balleSize=balleSize*1.2; }
     
     
-   /*else(dist(x2,y2,Px,Py)<=(balleSize/2+rayon/2))
-   {Vx=-Vx*Bc;
-     Vy=-Vy*Bc;}*/
+   if(dist(x2,y2,Px,Py)<=(balleSize/2+rayon/2))
+    {Vx=-Vx;
+     Vy=-Vy;}
    
  
  if((Px+balleSize/2)>=windowWidth || (Px-balleSize/2)<=0)
