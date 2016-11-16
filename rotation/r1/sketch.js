@@ -64,7 +64,7 @@ function draw() {
   if ((Px + balleSize / 2) >= windowWidth) {
     Vx = -Vx * Bc;
    Px=windowWidth-balleSize / 2;
-    
+  }
     else if ( (Px - balleSize / 2) <= 0) {
     Vx = -Vx * Bc;
      Px=balleSize / 2;
