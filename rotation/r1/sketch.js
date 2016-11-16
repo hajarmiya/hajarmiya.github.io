@@ -60,11 +60,12 @@ function draw() {
   }
   
 /********************* limite de bille************************/
-
+/**X**/
   if ((Px + balleSize / 2) >= windowWidth) {
     Vx = -Vx * Bc;
    Px=windowWidth-balleSize / 2;
   }
+  
     else if ( (Px - balleSize / 2) <= 0) {
     Vx = -Vx * Bc;
      Px=balleSize / 2;
@@ -73,9 +74,14 @@ function draw() {
   Ax = floor(rotationY) * Fr;
   Vx += Ax;
   Px += Vx;
-
-  if ((Py + balleSize / 2) >= windowHeight || (Py - balleSize / 2) <= 0) {
+/**Y**/
+  if ((Py + balleSize / 2) >= windowHeight ) {
     Vy = -Vy * Bc;
+    Py=windowHeight-balleSize / 2;
+  }
+  else if ( (Py - balleSize / 2) <= 0) {
+    Vy = -Vy * Bc;
+    Py=balleSize / 2;
   }
 
   Ay = floor(rotationX) * Fr;
