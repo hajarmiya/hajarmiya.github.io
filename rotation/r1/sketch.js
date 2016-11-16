@@ -27,6 +27,9 @@ function draw() {
 
 
   background(255);
+  
+  fill(100);
+  ellipse(Px, Py, balleSize, balleSize);
 
   fill(255, 58, 124);
   ellipse(x, y, rayon, rayon);
@@ -74,6 +77,7 @@ function draw() {
   Ax = floor(rotationY) * Fr;
   Vx += Ax;
   Px += Vx;
+  
 /**Y**/
   if ((Py + balleSize / 2) >= windowHeight ) {
     Vy = -Vy * Bc;
@@ -88,7 +92,7 @@ function draw() {
   Vy += Ay;
   Py += Vy;
 
-  drawBall();
+ 
 
   textSize(15);
 
