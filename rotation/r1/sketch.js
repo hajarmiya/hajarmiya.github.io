@@ -37,6 +37,8 @@ function draw() {
   fill(170, 1, 124);
   ellipse(x2, y2, rayon, rayon);
 
+  /*******condition obstacle*******/
+  
 
   if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
    /* x = random(0, windowWidth);
@@ -57,9 +59,12 @@ function draw() {
     Vy = Vy;
   }
   
+/********************* limite de bille************************/
 
   if ((Px + balleSize / 2) >= windowWidth || (Px - balleSize / 2) <= 0) {
     Vx = -Vx * Bc;
+    Px=balleSize / 2;
+    
   }
 
   Ax = floor(rotationY) * Fr;
