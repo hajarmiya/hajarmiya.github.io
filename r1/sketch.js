@@ -3,9 +3,17 @@ var obstacles=[];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for(var i=0;  i<3 ;i++)
-  {
-  obstacles[i]= new Obstacle("bonnus");
+   for (var i=0;i<3; i++){
+   var typeObstacle = random(0,3);
+   
+   if (typeObstacle < 2){
+      typeObstacle = "bonus";
+   } else if (typeObstacle < 1){
+     typeObstacle = "malus";
+   } else{
+     typeObstacle = "neutre";
+   }
+   obstacles[i] = new Obstacle(typeObstacle);
   }
   ellipse(CENTER);
 
@@ -39,9 +47,12 @@ function draw() {
   ellipse(100, 100, balleSize, balleSize);
   
   /********/
-  for(var i=0;  i<210 ;i++)
-  {
-  obstacles[i].display();
+  for (var i=0;i<3; i++){
+    
+    if (dist(pX,pY, obstacles[i].xPos,obstacles[i].yPos) <= (R + obstacles[i].radius)) {
+      score += this.valeur;
+    }
+    obstacles[i].display();
   }
   
   /********************* limite de bille************************/
@@ -119,16 +130,28 @@ function draw() {
   text("Ry: " + floor (rotationY), 100, 150);
   text("Rz: " + floor( rotationZ), 100, 200);*/
 }
-function Obstacle(genre){
-  this.type = genre;
-  this.posX= random(0,windowWidth);
-  this.posY= random(0,windowHeight);
-  this.size= random(20,50);
-  this.couleur = color(random(0,255),random(0,255),random(0,255));
-  
-  this.display= function(){
-    
-    fill(this.couleur);
-    ellipse(this.posX,this.posY,this.size,this.size);
-  }
+function Obstacle(kind){
+ this.type = kind;
+ this.xPos = random(0,windowWidth);
+ this.yPos = random(0,windowHeight);
+ this.size = random(20,50);
+ this.color = color(random(0,255),random(0,255),random(0,255));
+ this.radius = 25;
+ 
+ if(kind=="bonus"){
+ this.valeur = 10;
+ }
+ 
+ if(kind=="malus"){
+ this.valeur = -10;
+ }
+ 
+ if(kind=="neutre"){
+ this.valeur = 2;
+ }
+ 
+ this.display = function(){
+   fill(this.color);
+   ellipse(this.xPos,this.yPos,this.size,this.size);
+ }
 }
