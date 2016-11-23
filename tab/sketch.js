@@ -63,7 +63,9 @@ function draw() {
   {
   obstacles[i].display();
   }
- 
+ textSize(15);
+
+  text("score " + floor(score), 10, 15);
 }
 
 function Obstacle(genre){
