@@ -26,7 +26,6 @@ function setup() {
 
 function draw() {
 
-
   background(255);
   
   /****joueur*****/
@@ -78,7 +77,7 @@ function draw() {
   /*******condition obstacle*******/
   
 
-  if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
+ /* if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
   
     score = score + 10;
   } 
@@ -94,7 +93,7 @@ function draw() {
   else {
     Vx = Vx;
     Vy = Vy;
-  }
+  }*/
   
 
   textSize(15);
