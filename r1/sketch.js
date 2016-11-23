@@ -84,10 +84,9 @@ function draw() {
     }
     obstacles[i].display();
   }
-  
-
-  
+ 
 }
+
 function Obstacle(genre){
  this.type = genre;
  this.xPos = random(0,windowWidth);
