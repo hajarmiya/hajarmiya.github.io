@@ -17,16 +17,19 @@ function setup() {
   Vy = 0;
   
   for (var i=0;i<3; i++){
-   var typeObstacle = random(0,3);
+   var type = random(0,3);
    
-   if (typeObstacle < 2){
-      typeObstacle = "bonus";
-   } else if (typeObstacle < 1){
-     typeObstacle = "malus";
+   if (type < 2){
+      type++;
+      type = "bonus";
+   } else if (type < 1){
+      type++;
+     type = "malus";
    } else{
-     typeObstacle = "neutre";
+      type=0;
+     type = "neutre";
    }
-   obstacles[i] = new Obstacle(typeObstacle);
+   obstacles[i] = new Obstacle(type);
   }
  
 }
