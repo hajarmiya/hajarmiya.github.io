@@ -27,7 +27,8 @@ function draw() {
   /****joueur*****/
   fill(100);
   ellipse(Px, Py, balleSize, balleSize);
-   /********************* limite de bille************************/
+  
+  /********************* limite de bille************************/
 /**X**/
   if ((Px + balleSize / 2) >= windowWidth) {
     Vx = -Vx * Bc;
@@ -59,7 +60,6 @@ function draw() {
 
  
   /*********/
-  
    for(var i=0;  i<210 ;i++)
   {
   obstacles[i].display();
