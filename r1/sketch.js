@@ -74,7 +74,7 @@ function draw() {
 
   /***scoore*/
   textSize(15);
-  text("score " + floor(this.valeur), 10, 15);
+  text("score " + floor(obstacles[i].valeur), 10, 15);
   
    /********/
   for (var i=0;i<3; i++){
