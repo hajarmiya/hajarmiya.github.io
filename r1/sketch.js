@@ -4,7 +4,19 @@ var obstacles=[];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   
-   for (var i=0;i<3; i++){
+   
+  ellipseMode(CENTER);
+
+  balleSize = 50;
+  Px = windowWidth / 2;
+  Py = windowHeight / 2;
+  Fr = 0.01;
+  Bc = 0.8;
+  score = 0;
+  Vx = 0;
+  Vy = 0;
+  
+  for (var i=0;i<3; i++){
    var typeObstacle = random(0,3);
    
    if (typeObstacle < 2){
@@ -16,22 +28,11 @@ function setup() {
    }
    obstacles[i] = new Obstacle(typeObstacle);
   }
-  ellipseMode(CENTER);
-
-  balleSize = 50;
-  Px = windowWidth / 2;
-  Py = windowHeight / 2;
-  Fr = 0.01;
-  Bc = 0.8;
-  score = 0;
-  Vx = 0;
-  Vy = 0;
  
 }
 
 function draw() {
   
-
 
   background(255);
   
@@ -39,14 +40,6 @@ function draw() {
   fill(100);
   ellipse(Px, Py, balleSize, balleSize);
   
-  /********/
-  for (var i=0;i<3; i++){
-    
-    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize/2 + obstacles[i].radius)) {
-      score += this.valeur;
-    }
-    obstacles[i].display();
-  }
   
   /********************* limite de bille************************/
 /**X**/
@@ -79,10 +72,18 @@ function draw() {
   Py += Vy;
 
 
-  
+  /***scoore*/
   textSize(15);
-
   text("score " + floor(score), 10, 15);
+  
+   /********/
+  for (var i=0;i<3; i++){
+    
+    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize/2 + obstacles[i].radius)) {
+      score += this.valeur;
+    }
+    obstacles[i].display();
+  }
   
 
   
