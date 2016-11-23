@@ -74,13 +74,13 @@ function draw() {
 
   /***scoore*/
   textSize(15);
-  text("score " + floor(obstacles[i].valeur), 10, 15);
+  text("score " + score, 10, 15);
   
    /********/
   for (var i=0;i<3; i++){
     
     if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize/2 + obstacles[i].radius)) {
-      score += this.valeur;
+      score += obstacles[i].valeur;
     }
     obstacles[i].display();
   }
