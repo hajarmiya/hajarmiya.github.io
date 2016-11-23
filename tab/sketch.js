@@ -1,5 +1,6 @@
 var obstacles=[];
 var Ax, Ay, Vy, Vx, Px, Py, Fr,score;
+
 function setup() {
 createCanvas(windowWidth,windowHeight);
 ellipse(CENTER);
@@ -13,10 +14,10 @@ ellipse(CENTER);
   Vx = 0;
   Vy = 0;
 
-  for(var i=0;  i<3 ;i++)
+  /*for(var i=0;  i<3 ;i++)
   {
   obstacles[i]= new Obstacle("bonnus");
-  }
+  }*/
 }
 
 function draw() {
