@@ -1,5 +1,5 @@
 var Ax, Ay, Vy, Vx, Px, Py, Fr, x1, y1, x, y, x2, y2, rayon, score;
-
+var obstacles=[];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -13,18 +13,31 @@ function setup() {
   score = 0;
   Vx = 0;
   Vy = 0;
-  x = random(0, windowWidth);
+  /*x = random(0, windowWidth);
   y = random(0, windowHeight);
   x1 = random(0, windowWidth);
   y1 = random(0, windowHeight);
   x2 = random(0, windowWidth);
   y2 = random(0, windowHeight);
-  rayon = 30;
+  rayon = 30;*/
   
+  for(var i=0;  i<3 ;i++)
+  {
+  obstacles[i]= new Obstacle("bonnus");
+  }
+}
+
+
 
 }
 
 function draw() {
+  
+   for(var i=0;  i<210 ;i++)
+  {
+  obstacles[i].display();
+  }
+ 
 
   background(255);
   
@@ -65,6 +78,7 @@ function draw() {
  
   /*********/
 
+  /*
   fill(255, 58, 124);
   ellipse(x, y, rayon, rayon);
 
@@ -72,13 +86,13 @@ function draw() {
   ellipse(x1, y1, rayon, rayon);
 
   fill(170, 1, 124);
-  ellipse(x2, y2, rayon, rayon);
+  ellipse(x2, y2, rayon, rayon);*/
 
   /*******condition obstacle*******/
   
-
- /* if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
-  
+  if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
+   /* x = random(0, windowWidth);
+    y = random(0, windowHeight);*/
     score = score + 10;
   } 
   else if (dist(x2, y2, Px, Py) <= (balleSize / 2 + rayon / 2)) {
@@ -93,13 +107,29 @@ function draw() {
   else {
     Vx = Vx;
     Vy = Vy;
-  }*/
+  }
   
 
   textSize(15);
 
   text("score " + floor(score), 10, 15);
 
+  /*textSize(40);
  
+  text("Rx: " + floor( rotationX), 100, 100);
+  text("Ry: " + floor (rotationY), 100, 150);
+  text("Rz: " + floor( rotationZ), 100, 200);*/
 }
+function Obstacle(genre){
+  this.type = genre;
+  this.posX= random(0,windowWidth);
+  this.posY= random(0,windowHeight);
+  this.size= random(20,50);
+  this.couleur = color(random(0,255),random(0,255),random(0,255));
+  
+  this.display= function(){
+    
+    fill(this.couleur);
+    ellipse(this.posX,this.posY,this.size,this.size);
+  }
 
