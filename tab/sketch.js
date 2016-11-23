@@ -1,7 +1,7 @@
 var obstacles=[];
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  for(var i=0;  i<210 ;i++)
+  for(var i=0;  i<3 ;i++)
   {
   obstacles[i]= new Obstacle("bonnus");
   }
