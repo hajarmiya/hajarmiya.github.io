@@ -21,14 +21,10 @@ function setup() {
   y2 = random(0, windowHeight);
   rayon = 30;*/
   
-  for(var i=0;  i<3 ;i++)
+  for(var i=0;i<3 ;i++)
   {
   obstacles[i]= new Obstacle("bonnus");
   }
-}
-
-
-
 }
 
 function draw() {
