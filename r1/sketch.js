@@ -1,8 +1,9 @@
-var Ax, Ay, Vy, Vx, Px, Py, Fr, x1, y1, x, y, x2, y2, rayon, score;
+var Ax, Ay, Vy, Vx, Px, Py, Fr, score;
 var obstacles=[];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  
    for (var i=0;i<3; i++){
    var typeObstacle = random(0,3);
    
@@ -85,68 +86,37 @@ function draw() {
   Vy += Ay;
   Py += Vy;
 
- 
-  /*********/
-
-  /*fill(255, 58, 124);
-  ellipse(x, y, rayon, rayon);
-
-  fill(36, 56, 94);
-  ellipse(x1, y1, rayon, rayon);
-
-  fill(170, 1, 124);
-  ellipse(x2, y2, rayon, rayon);*/
-
-  /*******condition obstacle*******/
-  
-
-  /*if (dist(x, y, Px, Py) <= (balleSize / 2 + rayon / 2)) {
-   /* x = random(0, windowWidth);
-    y = random(0, windowHeight);
-    score = score + 10;
-  } 
-  else if (dist(x2, y2, Px, Py) <= (balleSize / 2 + rayon / 2)) {
-    Vx = -Vx;
-    Vy = -Vy;
-  } 
-  else if (dist(x1, y1, Px, Py) <= (balleSize / 2 + rayon / 2)) {
-    x1 = random(0, windowWidth);
-    y2 = random(0, windowHeight);
-    score = score -10;
+for (var i=0;i<3; i++){
+    
+    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize + obstacles[i].radius)) {
+      score += this.valeur;
+    }
+    obstacles[i].display();
   }
-  else {
-    Vx = Vx;
-    Vy = Vy;
-  }*/
-  
-
   textSize(15);
 
   text("score " + floor(score), 10, 15);
+  
 
-  /*textSize(40);
- 
-  text("Rx: " + floor( rotationX), 100, 100);
-  text("Ry: " + floor (rotationY), 100, 150);
-  text("Rz: " + floor( rotationZ), 100, 200);*/
+  
 }
-function Obstacle(kind){
- this.type = kind;
+function Obstacle(genre){
+ this.type = genre;
  this.xPos = random(0,windowWidth);
  this.yPos = random(0,windowHeight);
  this.size = random(20,50);
  this.color = color(random(0,255),random(0,255),random(0,255));
  this.radius = 25;
  
- if(kind=="bonus"){
+ if(genre=="bonus"){
  this.valeur = 10;
  }
  
- if(kind=="malus"){
+ if(genre=="malus"){
  this.valeur = -10;
  }
  
- if(kind=="neutre"){
+ if(genre=="neutre"){
  this.valeur = 2;
  }
  
