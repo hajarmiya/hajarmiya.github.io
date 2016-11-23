@@ -50,7 +50,7 @@ function draw() {
   /********/
   for (var i=0;i<3; i++){
     
-    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize + obstacles[i].radius)) {
+    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize/2 + obstacles[i].radius)) {
       score += this.valeur;
     }
     obstacles[i].display();
