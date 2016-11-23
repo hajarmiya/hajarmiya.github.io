@@ -1,7 +1,12 @@
 var Ax, Ay, Vy, Vx, Px, Py, Fr, x1, y1, x, y, x2, y2, rayon, score;
+var obstacles=[];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  for(var i=0;  i<3 ;i++)
+  {
+  obstacles[i]= new Obstacle("bonnus");
+  }
   ellipse(CENTER);
 
   balleSize = 50;
@@ -24,13 +29,20 @@ function setup() {
 }
 
 function draw() {
+  
 
 
   background(255);
   
   /****joueur*****/
   fill(100);
-  ellipse(Px, Py, balleSize, balleSize);
+  ellipse(100, 100, balleSize, balleSize);
+  
+  /********/
+  for(var i=0;  i<210 ;i++)
+  {
+  obstacles[i].display();
+  }
   
   /********************* limite de bille************************/
 /**X**/
@@ -107,4 +119,16 @@ function draw() {
   text("Ry: " + floor (rotationY), 100, 150);
   text("Rz: " + floor( rotationZ), 100, 200);*/
 }
-
+function Obstacle(genre){
+  this.type = genre;
+  this.posX= random(0,windowWidth);
+  this.posY= random(0,windowHeight);
+  this.size= random(20,50);
+  this.couleur = color(random(0,255),random(0,255),random(0,255));
+  
+  this.display= function(){
+    
+    fill(this.couleur);
+    ellipse(this.posX,this.posY,this.size,this.size);
+  }
+}
