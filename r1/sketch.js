@@ -1,4 +1,4 @@
-var Ax, Ay, Vy, Vx, Px, Py, Fr, score;
+var Ax, Ay, Vy, Vx, Px, Py, Fr, score,balleSize;
 var obstacles=[];
 
 function setup() {
@@ -16,7 +16,7 @@ function setup() {
    }
    obstacles[i] = new Obstacle(typeObstacle);
   }
-  ellipse(CENTER);
+  ellipseMode(CENTER);
 
   balleSize = 50;
   Px = windowWidth / 2;
@@ -26,15 +26,7 @@ function setup() {
   score = 0;
   Vx = 0;
   Vy = 0;
-  /*x = random(0, windowWidth);
-  y = random(0, windowHeight);
-  x1 = random(0, windowWidth);
-  y1 = random(0, windowHeight);
-  x2 = random(0, windowWidth);
-  y2 = random(0, windowHeight);
-  rayon = 30;
-*/
-
+ 
 }
 
 function draw() {
@@ -45,7 +37,7 @@ function draw() {
   
   /****joueur*****/
   fill(100);
-  ellipse(100, 100, balleSize, balleSize);
+  ellipse(Px, Py, balleSize, balleSize);
   
   /********/
   for (var i=0;i<3; i++){
@@ -86,13 +78,7 @@ function draw() {
   Vy += Ay;
   Py += Vy;
 
-for (var i=0;i<3; i++){
-    
-    if (dist(Px,Py, obstacles[i].xPos,obstacles[i].yPos) <= (balleSize/2 + obstacles[i].radius)) {
-      score += this.valeur;
-    }
-    obstacles[i].display();
-  }
+
   
   textSize(15);
 
