@@ -19,7 +19,7 @@ function setup() {
   
   for (var i=0;i<3; i++){
     
-   var toto = random(0,2);
+   var toto = 0;
    
    if (toto= 2){
       type = "bonus";
