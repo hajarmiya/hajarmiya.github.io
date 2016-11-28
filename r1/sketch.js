@@ -21,9 +21,9 @@ function setup() {
     
    var toto = random(0,3);
    
-   if (toto< 2){
+   if (toto= 2){
       type = "bonus";
-   } else if (toto < 1){
+   } else if (toto = 1){
      type = "malus";
    } else{
       toto=0;
