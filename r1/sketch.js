@@ -15,20 +15,24 @@ function setup() {
   score = 0;
   Vx = 0;
   Vy = 0;
+  toto=0;
   
   for (var i=0;i<3; i++){
-   var type = random(0,3);
+   var toto = 0;
    
-   if (type < 2){
-      type++;
+   if (toto ==0){
       type = "bonus";
-   } else if (type < 1){
-      type++;
+   } else if (toto == 1){
      type = "malus";
    } else{
-      type=0;
+      toto==2;
      type = "neutre";
+     
    }
+   if (toto<2){
+     toto++;
+   }
+   else{toto=0;}
    obstacles[i] = new Obstacle(type);
   }
  
