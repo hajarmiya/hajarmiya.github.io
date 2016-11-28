@@ -21,16 +21,17 @@ function setup() {
     
    var toto = 0;
    
-   if (toto= 2){
+   if (toto==0){
       type = "bonus";
-   } else if (toto = 1){
+   } else if (toto == 1){
      type = "malus";
    } else{
-      toto=0;
+      toto==2;
      type = "neutre";
    }
    if(toto<2)
    {toto++;}
+   
    else{toto=0;}
    obstacles[i] = new Obstacle(type);
   }
