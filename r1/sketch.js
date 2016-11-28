@@ -33,7 +33,9 @@ function setup() {
    {toto++;}
    
    else{toto=0;}
-   obstacles[i] = new Obstacle(type);
+   obstacles[i] = new Obstacle("bonus");
+    obstacles[i] = new Obstacle("malus");
+     obstacles[i] = new Obstacle("neutre");
   }
  
 }
