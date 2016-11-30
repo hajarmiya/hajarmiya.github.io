@@ -18,8 +18,6 @@ function setup() {
   toto=0;
   
   for (var i=0;i<3; i++){
-    
-    toto = 0;
    
    if (toto === 0){
       obstacles[i] = new Obstacle("bonus");
@@ -80,8 +78,8 @@ function draw() {
 
 
   /***scoore*/
-  textSize(30);
-  text("score " + score, 10, 15);
+  textSize(15);
+  text("score " + score, 50, 50);
   
    /********/
   for (var i=0;i<3; i++){
