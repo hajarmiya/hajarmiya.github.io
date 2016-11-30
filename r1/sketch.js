@@ -80,7 +80,7 @@ function draw() {
 
 
   /***scoore*/
-  textSize(15);
+  textSize(30);
   text("score " + score, 10, 15);
   
    /********/
