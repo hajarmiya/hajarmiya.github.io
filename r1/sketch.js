@@ -79,7 +79,7 @@ function draw() {
 
   /***scoore*/
   textSize(15);
-  text("score " + score, 50, 50);
+  text("score " + score, 20, 50);
   
    /********/
   for (var i=0;i<3; i++){
@@ -109,7 +109,7 @@ function Obstacle(genre){
  }
  
  if(genre=="neutre"){
- this.valeur = 2;
+ this.valeur = 0;
  }
  
  this.display = function(){
