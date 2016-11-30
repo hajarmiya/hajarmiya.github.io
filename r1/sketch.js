@@ -1,4 +1,4 @@
-var Ax, Ay, Vy, Vx, Px, Py, Fr, score,balleSize,toto;
+var Ax, Ay, Vy, Vx, Px, Py, Fr, score,balleSize;
 var obstacles=[];
 
 function setup() {
@@ -15,27 +15,25 @@ function setup() {
   score = 0;
   Vx = 0;
   Vy = 0;
-  tot=0;
+  toto=0;
   
   for (var i=0;i<3; i++){
     
-   var toto = 0;
+    toto = 0;
    
-   if (toto==0){
-      type = "bonus";
+   if (toto === 0){
+      obstacles[i] = new Obstacle("bonus");
+      toto++;
    } else if (toto == 1){
-     type = "malus";
-   } else{
-      toto==2;
-     type = "neutre";
+     obstacles[i] = new Obstacle("malus");
+     toto++;
+   } else if(toto == 2){
+      obstacles[i] = new Obstacle("neutre");
+     toto = 0;
    }
-   if(toto<2)
-   {toto++;}
    
-   else{toto=0;}
-   obstacles[i] = new Obstacle("bonus");
-    obstacles[i] = new Obstacle("malus");
-     obstacles[i] = new Obstacle("neutre");
+    
+     
   }
  
 }
