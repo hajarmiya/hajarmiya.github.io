@@ -4,7 +4,7 @@ var vX, vY;
 var pX, pY;
 var aX, aY;
 var f, bounce;
-/*var R;*/
+var Rayon;
 var score;
 var typeObstacle;
 var col;
@@ -24,7 +24,7 @@ function setup() {
   vY = 0;
   f = 0.01;
   bounce = 0.5;
-  R = Size / 2;
+  Rayon = Size / 2;
   score = 0;
   Size = 50;
   bSize = 30;
