@@ -161,7 +161,7 @@ function gameOver(){
   fill(255);
   textAlign(CENTER);
   textSize(20);
-  text("GAME OVER!", windowWidth / 2-50, windowHeight/2,100,100);
+  text("GAME OVER!", windowWidth / 2-100, windowHeight/2-50,200,100);
 }
 /* ******************************************** */
 
