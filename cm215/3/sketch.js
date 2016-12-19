@@ -160,8 +160,8 @@ function displayTimer() {
 function gameOver(){
   fill(255);
   textSize(20);
-  text("GAME ", windowWidth / 2-100, windowHeight/2);
-  text("OVER!", windowWidth / 2+100, windowHeight/2);
+  text("GAME ", windowWidth / 2-50, windowHeight/2);
+  text("OVER!", windowWidth / 2+50, windowHeight/2);
 }
 /* ******************************************** */
 
