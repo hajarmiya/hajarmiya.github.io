@@ -11,18 +11,21 @@ var level;
 var scoreLevel =[0,30,60];
 
 function preload() {
-  img = loadImage("ocean.png");
-  imgBalle = loadImage("Bulle.png");
-  imgObst = loadImage("bulle1.png");
-  imgMalus = loadImage("Bulle.png");
+  img = loadImage("back.jpg");
+  imgBalle = loadImage("player.png");
+  imgObst = loadImage("obs.png");
+  imgMalus = loadImage("malus.png");
+  imgBonus = loadImage("bonus.png");
 }
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
-  imgBalle = loadImage("Bulle.png");
-  imgObst = loadImage("bulle1.png");
+  imgBalle = loadImage("player.png");
+  imgObst = loadImage("obs.png");
+  imgMalus = loadImage("malus.png");
+  imgBonus = loadImage("bonus.png");
   ballSize = 50;
   pX = windowWidth / 2;
   pY = windowHeight / 2;
@@ -173,7 +176,7 @@ this.pic;
 
   if (kind == "bonus") {
     this.valeur = 10;
-    this.pic = imgObst;
+    this.pic = imgBonus;
   }
 
   if (kind == "malus") {
