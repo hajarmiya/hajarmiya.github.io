@@ -8,11 +8,13 @@ var Rayon;
 var score;
 var typeObstacle;
 var col;
-/*********************************************************=============*******************************************************/
+/*************************************/
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
   ellipseMode(CENTER);
+
+
   var typeObstacle = 0;
   for (var i = 0; i < 3; i++) {
     obstacles[0] = new Balle("bonus");
@@ -31,16 +33,13 @@ function setup() {
   pX = windowWidth / 2;
   pY = windowHeight / 2;
 }
-/*********************************************************=============*******************************************************/
+/*********************************/
 function draw() {
 
   background(255);
   drawBall();
   textSize(20);
   fill(0, 0, 255);
-  for (i = 0; i < 3; i++) {
-  obstacles[i].lesbilles();
-  }
 
   aX = rotationY * f;
   vX += aX;
@@ -48,29 +47,19 @@ function draw() {
   aY = rotationX * f;
   vY += aY;
   pY += vY;
+
+  for (i = 0; i < 3; i++) {
+    obstacles[i].lesbilles();
+  }
   
   text("score:" + score, 50, 50);
   
-if ((pX + Size / 2) >= windowWidth) {
-    vX = -vX * bounce;
-    pX = windowWidth - Size / 2;
-  
-  
-} else if ((pX - Size / 2 <= 0)) {
-    vX = -vX * bounce;
-    pX = Size / 2;
-  
-  
-}if ((pY + Size / 2 )>= windowHeight) {
-    vY = -vY * bounce;
-    pY = windowHeight - Size / 2;
-  
-    
-  } else if (pY - Size / 2 <= 0) {
-    vY = -vY * bounce;
-    pY = Size / 2;
-  }
+  reactionObs();
+  colusion();
 
+}
+/************************************/
+function colusion() {
 
   for (i = 0; i < 3; i++) {
     if (dist(pX, pY, obstacles[i].pX, obstacles[i].pY) <= Size / 2 + obstacles[i].size / 2) {
@@ -81,13 +70,13 @@ if ((pX + Size / 2) >= windowWidth) {
 
       } else if (obstacles[i].type === "bonus") {
         if (obstacles[i].col === false) {
-            obstacles[i].col = true;
-            score += 10;
+          obstacles[i].col = true;
+          score += 10;
         }
       } else if (obstacles[i].type === "malus") {
-             if (obstacles[i].col === false) {
-                obstacles[i].col = true;
-                score -= 5;
+        if (obstacles[i].col === false) {
+          obstacles[i].col = true;
+          score -= 5;
         }
       }
     } else {
@@ -95,14 +84,41 @@ if ((pX + Size / 2) >= windowWidth) {
     }
   }
 }
-/*********************************************************=============*******************************************************/
+
+/************************************/
+function reactionObs() {
+  if ((pX + Size / 2) >= windowWidth) {
+    vX = -vX * bounce;
+    pX = windowWidth - Size / 2;
+
+
+  } else if ((pX - Size / 2 <= 0)) {
+    vX = -vX * bounce;
+    pX = Size / 2;
+
+
+  }
+  if ((pY + Size / 2) >= windowHeight) {
+    vY = -vY * bounce;
+    pY = windowHeight - Size / 2;
+
+
+  } else if (pY - Size / 2 <= 0) {
+    vY = -vY * bounce;
+    pY = Size / 2;
+  }
+
+
+}
+
+/************************************/
 function drawBall() {
 
   fill(0);
   ellipse(pX, pY, Size, Size);
 
 }
-/*********************************************************=============*******************************************************/
+/***********************************/
 function Balle(genre) {
   this.type = genre;
   this.pX = random(0, windowWidth);
@@ -112,9 +128,7 @@ function Balle(genre) {
   if (this.type == "neutre") {
     this.color = color(0);
   }
-
   this.col = false;
-
   this.lesbilles = function() {
     fill(this.couleur);
     ellipse(this.pX, this.pY, this.size, this.size);
