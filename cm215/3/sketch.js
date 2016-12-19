@@ -165,8 +165,6 @@ function gameOver(){
 }
 /* ******************************************** */
 
-
-
 function Obstacle(kind) {
   this.type = kind;
    this.size = random(20, 50);
@@ -196,7 +194,6 @@ this.pic;
 
 this.display = function() {
   fill(this.color);
-  //ellipse(this.xPos, this.yPos, this.size, this.size);
   image(this.pic, this.xPos, this.yPos, this.size, this.size);
 }
 }
